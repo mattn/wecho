@@ -49,8 +49,11 @@ func TestRun(t *testing.T) {
 	}{
 		{`wecho/`, `/`},
 		{`wecho /`, `/`},
+		{`wecho  /`, ` /`},
 		{`wecho.exe/`, `/`},
 		{`wecho.exe /`, `/`},
+		{`wecho.exe  /`, ` /`},
+		{`wecho.exe  こんにちわ     世界`, ` こんにちわ     世界`},
 	}
 
 	for _, test := range tests {
