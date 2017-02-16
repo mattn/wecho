@@ -12,13 +12,16 @@ func argline(exe, s string) string {
 	if len(s) == 0 {
 		return ""
 	}
-	if strings.HasPrefix(s, `"`) {
+	if strings.HasPrefix(s, `"`) && len(s) >= len(exe)+2 {
 		s = s[1+len(exe)+1:]
-	} else {
+	} else if len(s) >= len(exe) {
 		s = s[len(exe):]
 	}
 	if len(s) > 0 && s[0] == ' ' {
 		s = s[1:]
+		if len(s) > 0 && s[0] == ' ' {
+			s = s[1:]
+		}
 	}
 	return s
 }
