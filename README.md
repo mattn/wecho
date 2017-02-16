@@ -13,6 +13,9 @@ wecho こんにちわ世界
 C:\>foo.bat
 こんにちわ世界
 
+C:\>foo.bat | nkf -Ws
+こんにちわ世界
+
 C:\>foo.bat > output
 ```
 
